@@ -56,7 +56,7 @@
             <!-- Row 2 -->
             <div class="flex flex-col lg:flex-row text-center h-auto p-2 lg:px-12 lg:pt-4 pb-2">
                 <!-- Virtualization Tools -->
-                <div class="w-full lg:w-1/4 pt-6 lg:pt-2">
+                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
                     <div>
                         <div class="text-xl border-t border-b border-black mx-2 justify-center">Virtualization Tools</div>
                         <div class="flex w-full flex-wrap">
@@ -66,7 +66,7 @@
                 </div>
 
                 <!-- Deploy & Automation Tools -->
-                <div class="w-full lg:w-1/4 pt-6 lg:pt-2">
+                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
                     <div>
                         <div class="text-xl border-t border-b border-black mx-2 justify-center">Deploy & Automation Tools</div>
                         <div class="flex w-full flex-wrap">
@@ -77,7 +77,7 @@
                 </div>
 
                 <!-- Automated Testing & Profiling -->
-                <div class="w-full lg:w-1/4 pt-6 lg:pt-2">
+                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
                     <div>
                         <div class="text-xl border-t border-b border-black mx-2 justify-center">Automated Testing & Profiling</div>
                         <div class="flex w-full flex-wrap">
