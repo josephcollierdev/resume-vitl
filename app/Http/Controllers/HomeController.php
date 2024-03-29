@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CmsContent;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
@@ -20,7 +21,9 @@ class HomeController extends Controller
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
-            'biographyText' => 'Hello, I am a Laravel Developer'
+            'biographyText' => ($cms_data = CmsContent::getByKey('home.about.biography')->first())
+                ? $cms_data->content
+                : '',
         ]);
     }
 }

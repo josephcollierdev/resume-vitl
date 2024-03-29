@@ -3,15 +3,18 @@
 
 <template>
   <div>
-    <div id="section-resume" class="scroll-my-32">
+    <div id="section-resume" class="scroll-my-52 lg:scroll-my-36 pb-6">
       <div class="w-full text-center text-4xl bg-floral-white-500 pt-6">RESUME</div>
       <div class="bg-floral-white-500 pb-6">
-        <div class="flex text-center h-[880px] p-12">
-          <div class="w-2/3 h-full p-16">
-            <div class="w-full h-full bg-floral-white-500">Left</div>
+        <div class="flex flex-col text-center h-auto p-12">
+          <div class="w-full">
+            <img src="/storage/images/Joseph_Collier_Resume_2024r.png-1.png" alt="Resume Page 1" class="w-3/4 m-auto h-full" />
           </div>
-          <div class="w-1/3 h-full p-16">
-            <div class="w-full h-full bg-floral-white-500">Right</div>
+          <div class="w-full">
+            <img src="/storage/images/Joseph_Collier_Resume_2024r.png-2.png" alt="Resume Page 2" class="w-3/4 m-auto h-full" />
+          </div>
+          <div class="w-full">
+            <img src="/storage/images/Joseph_Collier_Resume_2024r.png-3.png" alt="Resume Page 3" class="w-3/4 m-auto h-full" />
           </div>
         </div>
       </div>

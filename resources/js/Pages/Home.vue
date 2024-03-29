@@ -29,22 +29,24 @@ const shrinkHeader = (e) => {
         contactComponent
     ];
 
-	if (window.scrollY > headerHeight) {
-        header.classList.add('h-16');
-        header.classList.remove('h-36');
+    if (window.innerWidth > 480) {
+        if (window.scrollY > headerHeight) {
+        header.classList.add('lg:h-16');
+        header.classList.remove('lg:h-36');
 
         sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.add('scroll-my-12');
-            sectionComponent.classList.remove('scroll-my-36');
+            sectionComponent.classList.add('lg:scroll-my-12');
+            sectionComponent.classList.remove('scroll-my-52 lg:scroll-my-36');
         });
 	} else {
-        header.classList.remove('h-16');
-        header.classList.add('h-36');
+        header.classList.remove('lg:h-16');
+        header.classList.add('lg:h-36');
 
         sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.remove('scroll-my-12');
-            sectionComponent.classList.add('scroll-my-36');
+            sectionComponent.classList.remove('lg:scroll-my-12');
+            sectionComponent.classList.add('scroll-my-52 lg:scroll-my-36');
         });
+    }
     }
 }
 
@@ -53,22 +55,13 @@ onMounted(() => window.addEventListener('scroll', shrinkHeader));
 </script>
 
 <template>
-    <div class="min-h-screen h-full w-full bg-azure-500">
+    <div class="min-h-screen h-full w-full bg-floral-white-500">
         <HeaderNav />
-
         <About v-bind:biographyText="biographyText"/>
-
         <Resume />
-
         <Skills />
-
         <Contact />
 
-        <div class="bg-azure-700">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-        </div>
+        <div class="bg-platinum-700 w-full align-center text-center text-sm py-8">Joseph J. Collier, 2024</div>
     </div>
 </template>

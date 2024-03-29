@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div id="section-skills" class="scroll-my-32">
+    <div id="section-skills" class="scroll-my-52 lg:scroll-my-36">
         <div class="w-full text-center text-4xl bg-floral-white-500 pt-6">SKILLS</div>
 
         <div class="bg-floral-white-500 pb-16">
