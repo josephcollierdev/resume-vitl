@@ -20,6 +20,7 @@ class HomeController extends Controller
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
+            'biographyText' => 'Hello, I am a Laravel Developer'
         ]);
     }
 }
