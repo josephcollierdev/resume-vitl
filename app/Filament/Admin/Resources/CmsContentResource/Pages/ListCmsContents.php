@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\CmsContentResource\Pages;
+namespace App\Filament\Admin\Resources\CmsContentResource\Pages;
 
-use App\Filament\Resources\CmsContentResource;
+use App\Filament\Admin\Resources\CmsContentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 

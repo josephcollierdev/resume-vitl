@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Admin\Resources;
 
-use App\Filament\Resources\CmsContentResource\Pages;
-use App\Filament\Resources\CmsContentResource\RelationManagers;
+use App\Filament\Admin\Resources\CmsContentResource\Pages;
+use App\Filament\Admin\Resources\CmsContentResource\RelationManagers;
 use App\Models\CmsContent;
 use Filament\Forms;
 use Filament\Forms\Form;
