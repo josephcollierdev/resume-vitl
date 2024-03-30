@@ -9,11 +9,11 @@
   <div>
     <div id="section-about" class="scroll-my-52 lg:scroll-my-36">
       <div class="w-full text-center text-4xl bg-floral-white-500 pt-6">ABOUT ME</div>
-      <div class="bg-floral-white-500 pb-6 w-full">
-        <div class="flex flex-col lg:flex-row text-center w-full h-[1260px] lg:h-[880px]">
+      <div class="bg-floral-white-500 lg:pb-6 w-full">
+        <div class="flex flex-col lg:flex-row text-center w-full h-[1260px] lg:h-auto lg:py-12">
 
-          <div class="h-full w-full lg:w-2/5 flex align-middle justify-center p-auto m-auto place-items-center">
-            <div class="w-full h-[24rem] lg:h-[30rem] px-10" v-html="biographyText" />
+          <div class="h-auto w-full lg:w-2/5 flex align-middle justify-center justify-items-center justify-self-center items-center self-center align-center p-auto m-auto">
+            <div class="w-full h-[32rem] lg:h-auto px-10" v-html="biographyText" />
           </div>
 
           <div class="h-full w-full lg:w-3/5 flex align-middle justify-center p-auto m-auto place-items-center">

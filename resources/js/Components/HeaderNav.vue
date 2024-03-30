@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div id="header-nav" class="z-50 sticky top-0 h-[16rem] mb-8 lg:h-36 transition-all duration-300 ease-in-out">
+  <div id="header-nav" class="z-50 sticky top-0 h-[18rem] mb-8 lg:h-36 transition-all duration-300 ease-in-out">
     <div class="z-10 h-5/6 flex flex-col lg:flex-row text-center bg-platinum-700 sticky top-0">
       <a href="#" :class="fullnameClass">JOSEPH COLLIER</a>
       <div class="h-full flex flex-col lg:py-0  lg:flex-row w-full lg:w-2/3 m-auto text-center justify-evenly text-xl items-center align-middle">
@@ -18,7 +18,7 @@ export default {
         <a href="#section-resume" :class="navLinkClass">RESUME</a>
         <a href="#section-skills" :class="navLinkClass">SKILLS</a>
         <a href="#section-contact" :class="navLinkClass">CONTACT</a>
-        <a href="https://github.com/josephcollierdev" target="_blank" :class="navLinkClass">GITHUB</a>
+        <a href="https://github.com/josephcollierdev" target="_blank" :class="navLinkClass" class="pb-4">GITHUB</a>
       </div>
     </div>
   </div>
