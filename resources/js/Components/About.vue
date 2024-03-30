@@ -17,7 +17,7 @@
           </div>
 
           <div class="h-full w-3/5 flex align-middle justify-center p-auto m-auto place-items-center">
-            <div class="w-full h-[24rem] lg:h-[30rem] bg-[url('/storage/images/me_01.jpeg')] bg-contain lg:bg-cover bg-no-repeat bg-center opacity-75 blur-[2px] sepia-[.25] hover:blur-none saturate-50 hover:saturate-100 hue-rotate-180 hover:hue-rotate-30 transition-all duration-700">
+            <div class="w-full h-[24rem] lg:h-[30rem] bg-[url('/build/storage/app/public/images/me_01.jpeg')] bg-contain lg:bg-cover bg-no-repeat bg-center opacity-75 blur-[2px] sepia-[.25] hover:blur-none saturate-50 hover:saturate-100 hue-rotate-180 hover:hue-rotate-30 transition-all duration-700">
               &nbsp;
             </div>
           </div>
