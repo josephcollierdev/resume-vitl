@@ -8,6 +8,15 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
 
+RUN apt install libicu-dev -y \
+        && docker-php-ext-install intl \
+        && docker-php-ext-enable intl
+
+RUN apt-get update && apt-get install -y \
+    zlib1g-dev \
+    libzip-dev
+RUN docker-php-ext-install zip
+
 # RUN pecl install redis-5.3.7 \
 # 	&& pecl install xdebug-3.2.1 \
 # 	&& docker-php-ext-enable redis xdebug
