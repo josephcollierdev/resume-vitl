@@ -20,6 +20,6 @@ class CmsContent extends Model
 
     public static function getByKey($key)
     {
-        return  self::where('key', $key);
+        return self::where('key', $key);
     }
 }

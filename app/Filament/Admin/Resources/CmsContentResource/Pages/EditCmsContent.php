@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\CmsContentResource\Pages;
+namespace App\Filament\Admin\Resources\CmsContentResource\Pages;
 
-use App\Filament\Resources\CmsContentResource;
+use App\Filament\Admin\Resources\CmsContentResource;
+use Auth;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
@@ -26,6 +27,7 @@ class EditCmsContent extends EditRecord
         ]);
 
         $data['key'] = strtolower($key);
+        $data['last_updated_by'] = Auth::user()->id;
 
         return $data;
     }
