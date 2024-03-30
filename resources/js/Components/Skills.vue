@@ -2,14 +2,14 @@
 </script>
 
 <template>
-    <div id="section-skills" class="scroll-my-52 lg:scroll-my-36">
+    <div id="section-skills" class="scroll-my-52 md:scroll-my-36">
         <div class="w-full text-center text-4xl bg-floral-white-500 pt-6">SKILLS</div>
 
         <div class="bg-floral-white-500 pb-16">
             <!-- Row 1 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto p-2 lg:px-12 lg:pt-4 pb-2">
+            <div class="flex flex-col md:flex-row text-center h-auto p-2 md:px-12 md:pt-4 pb-2">
                 <!-- Programming / Markup Languages -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Programming / Markup Languages</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -21,7 +21,7 @@
                 </div>
 
                 <!-- Web Frameworks & Runtime Envs -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Web Frameworks & Runtime Envs</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -31,7 +31,7 @@
                 </div>
 
                 <!-- Frontend Frameworks & Libraries -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Frontend Frameworks & Libraries</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -43,9 +43,9 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto p-2 lg:px-12 pb-2">
+            <div class="flex flex-col md:flex-row text-center h-auto p-2 md:px-12 pb-2">
                 <!-- CMS & Admin Panels -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">CMS & Admin Panels</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -55,7 +55,7 @@
                 </div>
 
                 <!-- Virtualization Tools -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Virtualization Tools</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -65,7 +65,7 @@
                 </div>
 
                 <!-- Deploy & Automation Tools -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Deploy & Automation Tools</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -77,9 +77,9 @@
             </div>
 
             <!-- Row 3 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto p-2 lg:px-12 pb-2">
+            <div class="flex flex-col md:flex-row text-center h-auto p-2 md:px-12 pb-2">
                 <!-- Automated Testing & Profiling -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Automated Testing & Profiling</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -90,7 +90,7 @@
                 </div>
 
                 <!-- Monitoring Tools -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Monitoring Tools</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -100,7 +100,7 @@
                 </div>
 
                 <!-- Hosting & Cloud Services -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Hosting & Cloud Services</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -112,9 +112,9 @@
             </div>
 
             <!-- Row 4 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto px-4 lg:px-12 lg:pt-4 pb-2">
+            <div class="flex flex-col md:flex-row text-center h-auto px-4 md:px-12 md:pt-4 pb-2">
                 <!-- Database & Caching -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Database & Caching</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -125,7 +125,7 @@
                 </div>
 
                 <!-- Search -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Search</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -136,7 +136,7 @@
                 </div>
 
                 <!-- Security & Authentication -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Security & Authentication</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -147,9 +147,9 @@
             </div>
 
             <!-- Row 5 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto px-4 lg:px-12 lg:pt-4 pb-2">
+            <div class="flex flex-col md:flex-row text-center h-auto px-4 md:px-12 md:pt-4 pb-2">
                 <!-- Methodologies & Workflow -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Methodologies & Workflow</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -159,7 +159,7 @@
                 </div>
 
                 <!-- Pakcage Management & Asset Bundling -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Metholodologies & Workflow</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -169,7 +169,7 @@
                 </div>
 
                 <!-- Job Queues -->
-                <div class="w-full lg:w-1/3 pt-6 lg:pt-2">
+                <div class="w-full md:w-1/3 pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Job Queues</div>
                         <div class="flex w-full flex-wrap h-20 items-center">
@@ -180,9 +180,9 @@
             </div>
 
             <!-- Row 6 -->
-            <div class="flex flex-col lg:flex-row text-center h-auto px-4 lg:px-12 lg:pt-4">
+            <div class="flex flex-col md:flex-row text-center h-auto px-4 md:px-12 md:pt-4">
                 <!-- Other -->
-                <div class="w-full lg:w-full pt-6 lg:pt-2">
+                <div class="w-full md:w-full pt-6 md:pt-2">
                     <div>
                         <div class="text-xl mx-6 mb-2 justify-center bg-platinum-700">Other</div>
                         <div class="flex w-full flex-wrap h-20 items-center">

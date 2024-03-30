@@ -31,20 +31,20 @@ const shrinkHeader = (e) => {
 
     if (window.innerWidth > 480) {
         if (window.scrollY > headerHeight) {
-        header.classList.add('lg:h-16');
-        header.classList.remove('lg:h-36');
+        header.classList.add('md:h-16');
+        header.classList.remove('md:h-36');
 
         sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.add('lg:scroll-my-12');
-            sectionComponent.classList.remove('scroll-my-52 lg:scroll-my-36');
+            sectionComponent.classList.add('md:scroll-my-12');
+            sectionComponent.classList.remove('scroll-my-52 md:scroll-my-36');
         });
 	} else {
-        header.classList.remove('lg:h-16');
-        header.classList.add('lg:h-36');
+        header.classList.remove('md:h-16');
+        header.classList.add('md:h-36');
 
         sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.remove('lg:scroll-my-12');
-            sectionComponent.classList.add('scroll-my-52 lg:scroll-my-36');
+            sectionComponent.classList.remove('md:scroll-my-12');
+            sectionComponent.classList.add('scroll-my-52 md:scroll-my-36');
         });
     }
     }
@@ -62,6 +62,6 @@ onMounted(() => window.addEventListener('scroll', shrinkHeader));
         <Skills />
         <Contact />
 
-        <div class="bg-platinum-700 w-full align-center text-center text-sm py-2 lg:py-8">Joseph J. Collier, 2024</div>
+        <div class="bg-platinum-700 w-full align-center text-center text-sm py-2 md:py-8">Joseph J. Collier, 2024</div>
     </div>
 </template>

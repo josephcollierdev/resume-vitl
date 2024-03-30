@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <div id="section-resume" class="scroll-my-52 lg:scroll-my-36 pb-6">
+    <div id="section-resume" class="scroll-my-52 md:scroll-my-36 pb-6">
       <div class="w-full text-center text-4xl bg-floral-white-500 pt-6">RESUME</div>
       <div class="bg-floral-white-500 pb-6">
         <div class="flex flex-col text-center h-auto p-12">
