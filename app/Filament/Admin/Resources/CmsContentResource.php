@@ -45,7 +45,7 @@ class CmsContentResource extends Resource
                         'text/html' => 'text/html',
                     ])
                     ->required(),
-                Forms\Components\TextArea::make('content')
+                Forms\Components\Textarea::make('content')
                     ->label('Content')
                     ->columnSpan('full')
                     ->rows(20)
