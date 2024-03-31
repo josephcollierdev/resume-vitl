@@ -16,6 +16,17 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    protected function initializeSentry()
+    {
+        \Sentry\init([
+            'dsn' => config('SENTRY_LARAVEL_DSN', env('SENTRY_LARAVEL_DSN')),
+            // Specify a fixed sample rate
+            'traces_sample_rate' => config('SENTRY_TRACES_SAMPLE_RATE', 1.0),
+            // Set a sampling rate for profiling - this is relative to traces_sample_rate
+            'profiles_sample_rate' => 1.0,
+        ]);
+    }
+
     /**
      * Bootstrap any application services.
      */
