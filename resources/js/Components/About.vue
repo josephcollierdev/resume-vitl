@@ -39,26 +39,15 @@
 
 <template>
   <div>
-    <div :class="sectionContainerClass">
+    <div id="section-about" :class="sectionContainerClass">
       <div :class="sectionHeaderClass">ABOUT ME</div>
     </div>
 
     <div :class="subContainerStylingClass" class="w-full min-h-64 m-auto">
-      <div :class="subContainerContentStylingClass" class="text-left h-full font-inder">
-        Hi, i'm Joseph! Welcome to my website. <br /> <br />
-
-        A little bit about me, I am a fullstack developer and technology professional from NYC! Raised in Queens and living
-        in Brooklyn, but i'm always down to travel or work remotely. <br /> <br />
-
-        Here, you will find a list of jobs that i've held along with a brief outlook of my skills. I primarily work as a sof
-        tware engineer with various web applications, with a little bit of "devops" mixed in. Currently, I am studying cybersecurity as I work to enhance my skills as a developer.<br /> <br />
-
-        Outside of work, I enjoy cooking, gardening (mostly hot peppers), spending time with my friends; and as I progress t
-        hrough my 30s, I have become more interested in physical fitness. <br /> <br />
-
-        Feel free to check out my resume, my skills, and to contact me if you have any questions or would like to work toget
-        her on projects and tackle challenging tasks.
-      </div>
+      <div
+        :class="subContainerContentStylingClass"
+        class="text-left h-full font-inder"
+        v-html="biographyText"/>
       <div :class="subContainerContentSpacerClass"></div>
       <div
         :class="subContainerContentStylingClass"

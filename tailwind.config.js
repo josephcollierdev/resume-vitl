@@ -51,6 +51,9 @@ export default {
                 'black-magic': {
                     500: '#252422',
                     600: '#1E1D1B'
+                },
+                'sorbus': {
+                    500: '#EB5E28'
                 }
             }
         },

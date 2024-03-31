@@ -24,8 +24,9 @@ class HomeController extends Controller
                     'PHP',
                     'Javascript',
                     'Python',
-                    'HTML/CSS/SASS',
-                    'Bash & Shell Scripting'
+                    'HTML/CSS',
+                    'Bash',
+                    'Shell',
                 ]
             ],
             [
@@ -45,7 +46,7 @@ class HomeController extends Controller
                     'Vue.js',
                     'React.js',
                     'jQuery',
-                    'Tailwind CSS',
+                    'Tailwind',
                     'Bootstrap'
                 ]
             ],
@@ -83,9 +84,9 @@ class HomeController extends Controller
                 'label' => 'Deployment & Automation Tools',
                 'items' => [
                     'Git',
-                    'GitHub',
+                    // 'GitHub',
                     'Jenkins',
-                    'Docker Compose',
+                    'Docker',
                     'Envoyer',
                     'Buddy',
                     'CircleCI'
@@ -108,7 +109,7 @@ class HomeController extends Controller
                 'items' => [
                     'New Relic',
                     'Sentry',
-                    'Logstash',
+                    // 'Logstash',
                     'Kibana',
                     'Valgrind',
                     'Pulse'
@@ -122,7 +123,7 @@ class HomeController extends Controller
                 'label' => 'Cloud Services & Platforms',
                 'items' => [
                     'AWS',
-                    'Google Cloud',
+                    'GCP',
                     'Azure',
                     'DigitalOcean',
                     'Pantheon'
@@ -136,7 +137,7 @@ class HomeController extends Controller
                 'label' => 'Search & Indexing',
                 'items' => [
                     'Elasticsearch',
-                    'Google Custom Search',
+                    // 'Google Custom Search',
                     'BigQuery'
                 ]
             ],
@@ -191,8 +192,6 @@ class HomeController extends Controller
                     'Kanban',
                     'TDD',
                     'CI/CD',
-                    'SOAP',
-                    'MVC',
                     'OWASP'
                 ]
             ],
@@ -234,7 +233,7 @@ class HomeController extends Controller
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
-            'skillsData' => json_encode($skills),
+            'skillsData' => $skills,
             'biographyText' => ($cms_data = CmsContent::getByKey('home.about.biography')->first())
                 ? $cms_data->content
                 : '',
