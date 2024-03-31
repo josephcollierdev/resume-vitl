@@ -34,12 +34,12 @@
 </script>
 
 <template>
-  <div>
+  <div class="min-h-lvh">
     <div id="section-contact" :class="sectionContainerClass">
       <div :class="sectionHeaderClass">CONTACT</div>
     </div>
 
-    <div :class="subContainerStylingClass" class="w-3/4 min-h-64 m-auto">
+    <div :class="subContainerStylingClass" class="w-3/4 min-h-64 m-auto border-b-0">
       <div :class="subContainerContentStylingClass">
         <div>Feel free to send any questions or inquiries to me here, via email:<br /><br /></div>
         <p><a class="md:hover:text-lg hover:tracking-widest transition-all duration-500 ease-in-out" href="mailto:josephcollier.contact@gmail.com">josephcollier.contact@gmail.com</a></p>
