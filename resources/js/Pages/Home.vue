@@ -55,7 +55,7 @@ const headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:tex
     <div id="home-container" class="w-screen">
 
       <!-- HEADER -->
-      <div class="h-16 flex align-middle justify-items self-center items-center border-b border-space-shuttle-500 bg-black-magic-500 z-50 sticky top-0">
+      <div class="h-16 flex align-middle justify-items self-center items-center border-b border-t border-space-shuttle-500 bg-black-magic-500 z-50 sticky top-0">
 
         <!-- EMBLEM -->
         <div class="text-lg md:text-xl w-16 sm:w-64 h-16 flex align-middle justify-items self-center items-center text-center border-r border-space-shuttle-500 ">
