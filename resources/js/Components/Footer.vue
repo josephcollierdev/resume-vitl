@@ -34,7 +34,7 @@
 </script>
 
 <template>
-  <div class="w-full z-50 bg-black-magic-500 md:fixed md:bottom-0">
+  <div class="w-full z-50 bg-black-magic-500 lg:fixed lg:bottom-0">
     <div :class="subContainerStylingClass" class="border-t border-space-shuttle-500 py-4 text-center">
       <div>© 2024 Joseph Collier</div>
     </div>

@@ -59,16 +59,14 @@
         :class="subContainerContentStylingClass"
         class="w-full flex text-center align-middle justify-center justify-items self-center items-center
         ">
-        <div class="flex flex-col text-center h-auto p-12 bg-floral-white-500">
+        <div class="flex flex-col text-center h-auto p-4 md:p-8 lg:p-32 bg-floral-white-500">
           <div class="w-full">
-            2
             <div class="">
               <div v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
                 <img :src="src" class="w-3/4 m-auto h-full"/>
               </div>
             </div>
             <vue-easy-lightbox :visible="visibleRef" :imgs="imgs" :index="indexRef" @hide="onHide"></vue-easy-lightbox>
-            2
           </div>
         </div>
       </div>
