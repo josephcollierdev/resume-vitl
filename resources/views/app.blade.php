@@ -21,6 +21,7 @@
 
         <!-- META -->
         <meta name="description" content="Professional website for a Brooklyn / New York City based web developer / software engineer / cybersecurity analyst named Joseph Collier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="font-sans antialiased bg-black-magic-500">
         @inertia
