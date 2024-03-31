@@ -36,7 +36,7 @@
 <template>
   <div class="w-full z-50 bg-black-magic-500 md:fixed md:bottom-0">
     <div :class="subContainerStylingClass" class="border-t border-space-shuttle-500 py-4 text-center">
-      <div :class="subContainerContentStylingClass">© 2024 Joseph Collier</div>
+      <div>© 2024 Joseph Collier</div>
     </div>
   </div>
 </template>
