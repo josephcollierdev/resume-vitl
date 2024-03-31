@@ -30,8 +30,8 @@
   const visibleRef = ref(false)
   const indexRef = ref(0)
   const imgs = [
-    '/build/storage/app/public/images/resume-2024-r2-1.webp',
-    '/build/storage/app/public/images/resume-2024-r2-2.webp'
+    '/build/storage/app/public/images/resume-2024-r2-1_medium.webp',
+    '/build/storage/app/public/images/resume-2024-r2-2_medium.webp'
   ]
   const showImg = (index) => {
     indexRef.value = index
