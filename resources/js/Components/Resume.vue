@@ -63,7 +63,7 @@
           <div class="w-full">
             <div class="">
               <div v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
-                <img :src="src" class="w-3/4 m-auto h-full"/>
+                <img :src="src" class="w-3/4 m-auto h-full" alt="Image is part of a two page resume with some text omitted. Resume belongs to a web developer with over 12 years of experiencing spanning two long-term jobs."/>
               </div>
             </div>
             <vue-easy-lightbox :visible="visibleRef" :imgs="imgs" :index="indexRef" @hide="onHide"></vue-easy-lightbox>

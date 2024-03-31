@@ -50,6 +50,7 @@
         v-html="biographyText"/>
       <div :class="subContainerContentSpacerClass"></div>
       <div
+        alt="Background image is a photo of Joseph Collier."
         :class="subContainerContentStylingClass"
         class="h-64 sm:h-96 flex text-center align-middle justify-center justify-items self-center items-center bg-[url('/build/storage/app/public/images/me_01.webp')]
         bg-cover bg-no-repeat bg-center opacity-50 blur-[2px] sepia-[.25] hover:blur-none saturate-50 hover:saturate-100 hue-rotate-180 hover:hue-rotate-30 transition-all duration-700
