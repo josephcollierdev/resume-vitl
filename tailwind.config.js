@@ -14,6 +14,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // lato: ['Lato', 'sans-serif'],
+                montserrat: ['Montserrat', 'sans-serif'],
             },
             colors: {
                 'azure': {
@@ -28,17 +30,30 @@ export default {
                     700: '#ACB6C9',
                     900: '#7B8AA7'
                 },
+                'seashell': {
+                    300: '#FFFDFC',
+                    500: '#FFF5EE',
+                    700: '#FFE8D7',
+                    900: '#FAD1B1'
+                },
                 'floral-white': {
                     300: '#FFFEFC',
                     500: '#FFF9EE',
                     700: '#FFF1D7',
                     900: '#FAE1B1'
                 },
-                'seashell': {
-                    300: '#FFFDFC',
-                    500: '#FFF5EE',
-                    700: '#FFE8D7',
-                    900: '#FAD1B1'
+                'stark-white': {
+                    500: '#CCC5B9'
+                },
+                'space-shuttle': {
+                    500: '#403D39'
+                },
+                'black-magic': {
+                    500: '#252422',
+                    600: '#1E1D1B'
+                },
+                'sorbus': {
+                    500: '#EB5E28'
                 }
             }
         },

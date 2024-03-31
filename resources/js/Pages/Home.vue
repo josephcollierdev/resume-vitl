@@ -6,62 +6,90 @@ import About from '@/Components/About.vue';
 import Resume from '@/Components/Resume.vue';
 import Skills from '@/Components/Skills.vue';
 import Contact from '@/Components/Contact.vue';
+import Footer from '@/Components/Footer.vue';
 
-defineProps({
-    biographyText: String,
+const props = defineProps({
+  biographyText: {
+    type: String,
     required: true
+  },
+  skillsData: {
+    type: Object,
+    required: true
+  }
 });
 
-// onMounted(() => {
-//     // Your event listener code here
-// });
+const fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
+const sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
+const sectionContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
+const subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 md:p-16"
+const subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
+const subContainerContentSpacerClass = 'h-4 md:h-8'
+const verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
 
-const shrinkHeader = (e) => {
-    const header = document.querySelector('#header-nav');
-    const resumeComponent = document.querySelector('#section-resume');
-    const skillsComponent = document.querySelector('#section-skills');
-    const contactComponent = document.querySelector('#section-contact');
-    const headerHeight = header.clientHeight;
-
-    const sectionComponents = [
-        resumeComponent,
-        skillsComponent,
-        contactComponent
-    ];
-
-    if (window.innerWidth > 480) {
-        if (window.scrollY > headerHeight) {
-        header.classList.add('md:h-16');
-        header.classList.remove('md:h-36');
-
-        sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.add('md:scroll-my-12');
-            sectionComponent.classList.remove('scroll-my-52 md:scroll-my-36');
-        });
-	} else {
-        header.classList.remove('md:h-16');
-        header.classList.add('md:h-36');
-
-        sectionComponents.forEach((sectionComponent) => {
-            sectionComponent.classList.remove('md:scroll-my-12');
-            sectionComponent.classList.add('scroll-my-52 md:scroll-my-36');
-        });
-    }
-    }
-}
-
-onMounted(() => window.addEventListener('scroll', shrinkHeader));
-
+const headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
 </script>
 
 <template>
-    <div class="min-h-screen h-full w-full bg-floral-white-500">
-        <HeaderNav />
-        <About v-bind:biographyText="biographyText"/>
-        <Resume />
-        <Skills />
-        <Contact />
+  <div class="max-w-fit min-h-screen bg-black-magic-500" :class="fontMainClass">
+    <div id="home-container" class="w-screen">
 
-        <div class="bg-platinum-700 w-full align-center text-center text-sm py-2 md:py-8">Joseph J. Collier, 2024</div>
+      <!-- HEADER -->
+      <div class="h-16 flex align-middle justify-items self-center items-center border-b border-space-shuttle-500 bg-black-magic-500 z-50 sticky top-0">
+
+        <!-- EMBLEM -->
+        <div class="text-lg md:text-xl w-16 sm:w-64 h-16 flex align-middle justify-items self-center items-center text-center border-r border-space-shuttle-500 ">
+          <div class="w-full sm:hidden">J.C.</div>
+          <div class="w-full hidden sm:block">JOSEPH COLLIER</div>
+        </div>
+
+        <!-- NAV -->
+        <div
+          :class="verticalAlignClass"
+          class="w-1/5 h-12 text-base md:text-lg grow flex justify-evenly md:justify-around overflow-y-hidden text-center">
+          <a href="#section-about" :class="headerNavLinkClass">about</a href="#">
+          <a href="#section-resume" :class="headerNavLinkClass">resume</a href="#">
+          <a href="#section-skills" :class="headerNavLinkClass">skills</a href="#">
+          <a href="#section-contact" :class="headerNavLinkClass">contact</a href="#">
+          <a href="https://github.com/josephcollierdev" target="_blank" :class="headerNavLinkClass">github</a>
+        </div>
+      </div>
+
+      <!-- ABOUT ME -->
+      <About
+        :biographyText="biographyText"
+        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+
+      <!-- Resume -->
+      <Resume
+        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+
+      <!-- SKILLS -->
+      <Skills
+        :skillsData="skillsData"
+        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+
+      <!-- CONTACT -->
+      <Contact
+        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+
+        <Footer />
     </div>
+  </div>
 </template>

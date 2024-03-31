@@ -10,12 +10,20 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
         <!-- Scripts -->
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
+
+        <!-- META -->
+        <meta name="description" content="Professional website for a Brooklyn / New York City based web developer / software engineer / cybersecurity analyst named Joseph Collier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-black-magic-500">
         @inertia
     </body>
 </html>
