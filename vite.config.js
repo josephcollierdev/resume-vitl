@@ -19,6 +19,7 @@ export default defineConfig({
                 },
             },
         }),
+        viteCompression(),
         viteStaticCopy({
             targets: [
                 {
@@ -27,6 +28,5 @@ export default defineConfig({
                 },
             ]
           }),
-        viteCompression(),
     ],
 });

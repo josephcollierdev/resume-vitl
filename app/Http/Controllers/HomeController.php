@@ -225,6 +225,15 @@ class HomeController extends Controller
                     'Adobe XD',
                     'Adobe Photoshop'
                 ]
+            ],
+            [
+                'skill' => 'cyber-certs',
+                'label' => 'Cybersecurity Certifications',
+                'items' => [
+                    'Play It Safe: Manage Security Risks',
+                    // 'Foundations of Cybersecurity',
+                    'Connect and Protect: Networks and Network Security'
+                ]
             ]
         ];
 

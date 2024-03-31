@@ -25,6 +25,10 @@
     subContainerStylingClass: {
       type: String,
       required: true
+    },
+    verticalAlignClass: {
+      type: String,
+      required: true
     }
   });
 </script>
@@ -39,7 +43,7 @@
         <div class="w-full text-left mb-1">{{ skillSection.label }}</div>
         <div
           class="w-full py-4 overflow-scroll border border-space-shuttle-500 rounded-md text-left h-full font-inder flex md:flex-row justify-start p-2 md:p-4">
-          <div v-for="skill in skillSection.items" class="text-center p-1 md:px-4 border border-space-shuttle-500 rounded-md md:rounded lg:rounded-lg mx-1 md:mx-4 text-xs md:text-lg font-medium overflow-hidden bg-floral-white-500 text-black-magic-600">
+          <div v-for="skill in skillSection.items" :class="verticalAlignClass" class="text-center p-1 md:px-4 border border-space-shuttle-500 rounded-md md:rounded lg:rounded-lg mx-1 md:mx-4 text-xs md:text-lg font-medium overflow-hidden bg-floral-white-500 text-black-magic-600">
             {{ skill }}
           </div>
         </div>

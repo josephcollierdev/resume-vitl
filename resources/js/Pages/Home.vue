@@ -103,7 +103,8 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"
+        :verticalAlignClass="verticalAlignClass"/>
 
       <!-- CONTACT -->
       <Contact
