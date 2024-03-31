@@ -59,7 +59,7 @@ export default {
         },
     },
 
-    purge: [
+    content: [
         './resources/js/**/*.{vue,js}',
         './resources/views/**/*.blade.php'
     ],
