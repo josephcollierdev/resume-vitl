@@ -16,6 +16,12 @@ class HomeController extends Controller
 {
     public function index(): Response
     {
+          try {
+            $this->functionFailsForSure();
+          } catch (\Throwable $exception) {
+            \Sentry\captureException($exception);
+          }
+
         $skills = [
             [
                 'skill' => 'programming',

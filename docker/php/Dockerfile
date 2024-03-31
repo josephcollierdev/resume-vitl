@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
     libzip-dev
 RUN docker-php-ext-install zip
 
+RUN pecl install excimer-1.2.1 \
+    && docker-php-ext-enable excimer
+
 # RUN pecl install redis-5.3.7 \
 # 	&& pecl install xdebug-3.2.1 \
 # 	&& docker-php-ext-enable redis xdebug
