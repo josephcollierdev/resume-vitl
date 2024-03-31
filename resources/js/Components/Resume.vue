@@ -1,5 +1,8 @@
 <script setup>
   import { onMounted } from 'vue';
+  import VueEasyLightbox from 'vue-easy-lightbox/external-css'
+  import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
+  import { ref } from 'vue';
 
   const props = defineProps({
     sectionContainerClass: {
@@ -24,6 +27,18 @@
     }
   });
 
+  const visibleRef = ref(false)
+  const indexRef = ref(0)
+  const imgs = [
+    '/build/storage/app/public/images/resume-2024-r2-1.webp',
+    '/build/storage/app/public/images/resume-2024-r2-2.webp'
+  ]
+  const showImg = (index) => {
+    indexRef.value = index
+    visibleRef.value = true
+  }
+  const onHide = () => visibleRef.value = false
+
   onMounted(() => {
       const sectionContainerClass = props.sectionContainerClass
       const sectionHeaderClass = props.sectionHeaderClass
@@ -46,10 +61,14 @@
         ">
         <div class="flex flex-col text-center h-auto p-12 bg-floral-white-500">
           <div class="w-full">
-            <img src="/build/storage/app/public/images/resume-2024-r2-1.webp" alt="Resume Page 1" class="w-3/4 m-auto h-full" />
-          </div>
-          <div class="w-full">
-            <img src="/build/storage/app/public/images/resume-2024-r2-2.webp" alt="Resume Page 2" class="w-3/4 m-auto h-full" />
+            2
+            <div class="">
+              <div v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
+                <img :src="src" class="w-3/4 m-auto h-full"/>
+              </div>
+            </div>
+            <vue-easy-lightbox :visible="visibleRef" :imgs="imgs" :index="indexRef" @hide="onHide"></vue-easy-lightbox>
+            2
           </div>
         </div>
       </div>

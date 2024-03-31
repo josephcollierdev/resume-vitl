@@ -16,12 +16,6 @@ class HomeController extends Controller
 {
     public function index(): Response
     {
-          try {
-            $this->functionFailsForSure();
-          } catch (\Throwable $exception) {
-            \Sentry\captureException($exception);
-          }
-
         $skills = [
             [
                 'skill' => 'programming',
@@ -239,6 +233,11 @@ class HomeController extends Controller
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
+            'sectionContainerClass' => '',
+            'sectionHeaderClass' => '',
+            'subContainerContentStylingClass' => '',
+            'subContainerContentSpacerClass' => '',
+            'subContainerStylingClass' => '',
             'skillsData' => $skills,
             'biographyText' => ($cms_data = CmsContent::getByKey('home.about.biography')->first())
                 ? $cms_data->content

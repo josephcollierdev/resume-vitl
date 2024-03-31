@@ -16,16 +16,36 @@ const props = defineProps({
   skillsData: {
     type: Object,
     required: true
+  },
+  sectionContainerClass: {
+    type: String,
+    required: true,
+  },
+  sectionHeaderClass: {
+    type: String,
+    required: true
+  },
+  subContainerContentStylingClass: {
+    type: String,
+    required: true
+  },
+  subContainerContentSpacerClass: {
+    type: String,
+    required: false
+  },
+  subContainerStylingClass: {
+    type: String,
+    required: false
   }
 });
 
-const fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
-const sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
+let fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
+let sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
 const sectionContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
-const subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 md:p-16"
-const subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
-const subContainerContentSpacerClass = 'h-4 md:h-8'
-const verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
+let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 md:p-16"
+let subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
+let subContainerContentSpacerClass = 'h-4 md:h-8'
+let verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
 
 const headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
 </script>
@@ -89,7 +109,12 @@ const headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:tex
         :subContainerContentStylingClass="subContainerContentStylingClass"
         :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
 
-        <Footer />
+      <Footer
+        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
     </div>
   </div>
 </template>
