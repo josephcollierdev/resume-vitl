@@ -36,18 +36,22 @@ const props = defineProps({
   subContainerStylingClass: {
     type: String,
     required: false
+  },
+  footerStylingClass: {
+    type: String,
+    required: false
   }
 });
 
 let fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
 let sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
-const sectionContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
-let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
+let sectionContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
+let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 lg:p-16"
+let footerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
 let subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
 let subContainerContentSpacerClass = 'h-4 md:h-8'
 let verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
-
-const headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
+let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
 </script>
 
 <template>

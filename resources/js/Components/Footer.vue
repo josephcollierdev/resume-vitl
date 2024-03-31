@@ -18,7 +18,7 @@
       type: String,
       required: true
     },
-    subContainerStylingClass: {
+    footerStylingClass: {
       type: String,
       required: true
     }
@@ -29,13 +29,13 @@
       const sectionHeaderClass = props.sectionHeaderClass
       const subContainerContentStylingClass = props.subContainerContentStylingClass
       const subContainerContentSpacerClass = props.subContainerContentSpacerClass
-      const subContainerStylingClass = props.subContainerStylingClass
+      const footerStylingClass = props.footerStylingClass
   });
 </script>
 
 <template>
   <div class="w-full z-50 bg-black-magic-500 lg:fixed lg:bottom-0">
-    <div :class="subContainerStylingClass" class="border-t border-space-shuttle-500 py-4 text-center">
+    <div :class="footerStylingClass" class="border-t border-space-shuttle-500 py-4 text-center">
       <div>© 2024 Joseph Collier</div>
     </div>
   </div>

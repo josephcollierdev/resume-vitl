@@ -238,6 +238,7 @@ class HomeController extends Controller
             'subContainerContentStylingClass' => '',
             'subContainerContentSpacerClass' => '',
             'subContainerStylingClass' => '',
+            'footerStylingClass' => '',
             'skillsData' => $skills,
             'biographyText' => ($cms_data = CmsContent::getByKey('home.about.biography')->first())
                 ? $cms_data->content
