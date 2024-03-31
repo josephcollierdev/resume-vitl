@@ -6,6 +6,14 @@
       type: String,
       required: true
     },
+    sectionContainerClass: {
+      type: String,
+      required: true
+    },
+    sectionHeaderClass: {
+      type: String,
+      required: true
+    },
     subContainerContentStylingClass: {
       type: String,
       required: true
@@ -21,6 +29,8 @@
   });
 
   onMounted(() => {
+      const sectionContainerClass = props.sectionContainerClass
+      const sectionHeaderClass = props.sectionHeaderClass
       const subContainerContentStylingClass = props.subContainerContentStylingClass
       const subContainerContentSpacerClass = props.subContainerContentSpacerClass
       const subContainerStylingClass = props.subContainerStylingClass
@@ -29,12 +39,11 @@
 
 <template>
   <div>
-    <div
-      class="w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500">
-      <div class="w-full">ABOUT ME</div>
+    <div :class="sectionContainerClass">
+      <div :class="sectionHeaderClass">ABOUT ME</div>
     </div>
 
-    <div :class="subContainerStylingClass" class="w-full min-h-64 p-4 m-auto">
+    <div :class="subContainerStylingClass" class="w-full min-h-64 m-auto">
       <div :class="subContainerContentStylingClass" class="text-left h-full font-inder">
         Hi, i'm Joseph! Welcome to my website. <br /> <br />
 
