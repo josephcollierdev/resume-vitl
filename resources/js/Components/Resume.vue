@@ -46,13 +46,10 @@
         ">
         <div class="flex flex-col text-center h-auto p-12 bg-floral-white-500">
           <div class="w-full">
-            <img src="/build/storage/app/public/images/Joseph_Collier_Resume_2024r-1.webp" alt="Resume Page 1" class="w-3/4 m-auto h-full" />
+            <img src="/build/storage/app/public/images/resume-2024-r2-1.webp" alt="Resume Page 1" class="w-3/4 m-auto h-full" />
           </div>
           <div class="w-full">
-            <img src="/build/storage/app/public/images/Joseph_Collier_Resume_2024r-2.webp" alt="Resume Page 2" class="w-3/4 m-auto h-full" />
-          </div>
-          <div class="w-full">
-            <img src="/build/storage/app/public/images/Joseph_Collier_Resume_2024r-3.webp" alt="Resume Page 3" class="w-3/4 m-auto h-full" />
+            <img src="/build/storage/app/public/images/resume-2024-r2-2.webp" alt="Resume Page 2" class="w-3/4 m-auto h-full" />
           </div>
         </div>
       </div>
