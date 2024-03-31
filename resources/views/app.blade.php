@@ -18,6 +18,9 @@
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
+
+        <!-- META -->
+        <meta name="description" content="Professional website for a Brooklyn / New York City based web developer / software engineer / cybersecurity analyst named Joseph Collier.">
     </head>
     <body class="font-sans antialiased bg-black-magic-500">
         @inertia
