@@ -48,9 +48,9 @@
       <div :class="subContainerContentStylingClass">
         <div>Feel free to send any questions or inquiries to me here, via email:<br /><br /></div>
         <p><a class="md:hover:text-lg hover:tracking-widest transition-all duration-500 ease-in-out" href="mailto:josephcollier.contact@gmail.com">josephcollier.contact@gmail.com</a></p>
-        <div class="flex p-16 m-auto w-full justify-center">
-          <div class="flex w-64 h-64 border" :class="verticalAlignClass">
-            <div class="text-4xl" :class="verticalAlignClass">JOSEPH COLLIER</div>
+        <div class="flex p-8 lg:p-16 m-auto w-full justify-center">
+          <div class="flex w-32 h-32 lg:w-64 lg:h-64 border" :class="verticalAlignClass">
+            <div class="text-base lg:text-4xl" :class="verticalAlignClass">JOSEPH COLLIER</div>
           </div>
         </div>
       </div>
