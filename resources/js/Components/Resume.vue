@@ -5,7 +5,7 @@
   import { ref } from 'vue';
 
   const props = defineProps({
-    sectionContainerClass: {
+    sectionHeaderContainerClass: {
       type: String,
       required: true
     },
@@ -40,7 +40,7 @@
   const onHide = () => visibleRef.value = false
 
   onMounted(() => {
-      const sectionContainerClass = props.sectionContainerClass
+      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
       const sectionHeaderClass = props.sectionHeaderClass
       const subContainerContentStylingClass = props.subContainerContentStylingClass
       const subContainerContentSpacerClass = props.subContainerContentSpacerClass
@@ -50,7 +50,7 @@
 
 <template>
   <div>
-    <div id="section-resume" :class="sectionContainerClass">
+    <div id="section-resume" :class="sectionHeaderContainerClass">
       <div :class="sectionHeaderClass">RESUME</div>
     </div>
 

@@ -6,7 +6,7 @@
       type: String,
       required: true
     },
-    sectionContainerClass: {
+    sectionHeaderContainerClass: {
       type: String,
       required: true
     },
@@ -29,7 +29,7 @@
   });
 
   onMounted(() => {
-      const sectionContainerClass = props.sectionContainerClass
+      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
       const sectionHeaderClass = props.sectionHeaderClass
       const subContainerContentStylingClass = props.subContainerContentStylingClass
       const subContainerContentSpacerClass = props.subContainerContentSpacerClass
@@ -39,7 +39,7 @@
 
 <template>
   <div>
-    <div id="section-about" :class="sectionContainerClass">
+    <div id="section-about" :class="sectionHeaderContainerClass">
       <div :class="sectionHeaderClass">ABOUT ME</div>
     </div>
 

@@ -242,7 +242,7 @@ class HomeController extends Controller
             'canRegister' => Route::has('register'),
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
-            'sectionContainerClass' => '',
+            'sectionHeaderContainerClass' => '',
             'sectionHeaderClass' => '',
             'subContainerContentStylingClass' => '',
             'subContainerContentSpacerClass' => '',

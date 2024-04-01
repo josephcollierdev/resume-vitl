@@ -17,7 +17,7 @@ const props = defineProps({
     type: Object,
     required: true
   },
-  sectionContainerClass: {
+  sectionHeaderContainerClass: {
     type: String,
     required: true,
   },
@@ -45,7 +45,7 @@ const props = defineProps({
 
 let fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
 let sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
-let sectionContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
+let sectionHeaderContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
 let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 lg:p-16"
 let footerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
 let subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
@@ -82,7 +82,7 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
       <!-- ABOUT ME -->
       <About
         :biographyText="biographyText"
-        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
@@ -90,7 +90,7 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
 
       <!-- Resume -->
       <Resume
-        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
@@ -99,7 +99,7 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
       <!-- SKILLS -->
       <Skills
         :skillsData="skillsData"
-        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
@@ -108,14 +108,15 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
 
       <!-- CONTACT -->
       <Contact
-        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"
+        :verticalAlignClass="verticalAlignClass"/>
 
       <Footer
-        :sectionContainerClass="sectionContainerClass"
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
         :sectionHeaderClass="sectionHeaderClass"
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"

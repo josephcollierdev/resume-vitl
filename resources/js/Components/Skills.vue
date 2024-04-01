@@ -6,7 +6,7 @@
         type: Object,
         required: true
     },
-    sectionContainerClass: {
+    sectionHeaderContainerClass: {
       type: String,
       required: true
     },
@@ -35,7 +35,7 @@
 
 <template>
   <div>
-    <div id="section-skills" :class="sectionContainerClass">
+    <div id="section-skills" :class="sectionHeaderContainerClass">
       <div :class="sectionHeaderClass">SKILLS</div>
     </div>
     <div :class="subContainerStylingClass" class="w-full min-h-64 m-auto">

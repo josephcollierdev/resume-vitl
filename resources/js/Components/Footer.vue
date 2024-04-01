@@ -2,7 +2,7 @@
   import { onMounted } from 'vue';
 
   const props = defineProps({
-    sectionContainerClass: {
+    sectionHeaderContainerClass: {
       type: String,
       required: true
     },
@@ -25,7 +25,7 @@
   });
 
   onMounted(() => {
-      const sectionContainerClass = props.sectionContainerClass
+      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
       const sectionHeaderClass = props.sectionHeaderClass
       const subContainerContentStylingClass = props.subContainerContentStylingClass
       const subContainerContentSpacerClass = props.subContainerContentSpacerClass
