@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
@@ -23,7 +24,37 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->label('Full Name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('first_name')
+                    ->label('First Name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('last_name')
+                    ->label('Last Name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('password')
+                    ->label('Password')
+                    ->password()
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->minLength(8)
+                    ->same('passwordConfirmation')
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state)),
+                Forms\Components\TextInput::make('passwordConfirmation')
+                    ->label('Confirm Password')
+                    ->password()
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->minLength(8)
+                    ->dehydrated(false),
+                Forms\Components\Toggle::make('is_admin')
+                    ->label('Admin User')
+                    ->default(false),
             ]);
     }
 
@@ -31,10 +62,39 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Name')
+                    ->getStateUsing(function ($record) {
+                        if ($record->first_name && $record->last_name) {
+                            return $record->first_name . ' ' . $record->last_name;
+                        }
+                        return $record->name ?? 'No name';
+                    })
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->label('Email')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_admin')
+                    ->label('Admin')
+                    ->boolean()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\TernaryFilter::make('is_admin')
+                    ->label('Admin Users')
+                    ->boolean()
+                    ->trueLabel('Admin users only')
+                    ->falseLabel('Non-admin users only')
+                    ->native(false),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

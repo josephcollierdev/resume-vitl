@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\AdminAccess;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -49,9 +50,20 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                AdminAccess::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->authGuard('web')
+            ->authPasswordBroker('users')
+            ->login()
+            ->registration(false)
+            ->passwordReset()
+            ->emailVerification()
+            ->profile()
+            ->userMenuItems([
+                'logout' => \Filament\Navigation\MenuItem::make()->label('Log out'),
             ]);
     }
 }
