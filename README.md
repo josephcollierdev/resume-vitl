@@ -64,3 +64,139 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+# Local Development Setup
+
+This section provides instructions for setting up the Resume Vitl portfolio website locally for development.
+
+## Prerequisites
+
+- PHP 8.3+
+- Composer
+- Node.js 18+
+- npm or yarn
+
+## Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd resume-vitl
+   ```
+
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Install Node.js dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Set up environment file**
+   ```bash
+   cp .env.example .env
+   ```
+
+5. **Configure database for local development**
+
+   The `.env` file should be configured for SQLite:
+   ```env
+   DB_CONNECTION=sqlite
+   DB_DATABASE=/Users/your-username/Projects/resume-vitl/database/database.sqlite
+   ```
+
+6. **Generate application key**
+   ```bash
+   php artisan key:generate
+   ```
+
+7. **Create SQLite database**
+   ```bash
+   touch database/database.sqlite
+   ```
+
+8. **Run database migrations**
+   ```bash
+   php artisan migrate
+   ```
+
+9. **Seed the database with content**
+   ```bash
+   php artisan db:seed --class=CmsContentSeeder
+   ```
+
+10. **Create storage link for assets**
+    ```bash
+    php artisan storage:link
+    ```
+
+11. **Build frontend assets**
+    ```bash
+    npm run build
+    ```
+
+12. **Start the development servers**
+
+    **Terminal 1 - Laravel server:**
+    ```bash
+    php artisan serve
+    ```
+
+    **Terminal 2 - Vite dev server:**
+    ```bash
+    npm run dev
+    ```
+
+## Access the Application
+
+- **Main Application**: Check the terminal output for the Laravel server URL
+- **Frontend Assets**: Handled by Vite dev server with hot reloading (check terminal for URL)
+
+## Database Management
+
+For local development, the application uses SQLite. You can connect to the database using:
+
+- **DBeaver**: SQLite connection to `/Users/your-username/Projects/resume-vitl/database/database.sqlite`
+- **DB Browser for SQLite**: Free GUI tool
+- **Laravel Tinker**: `php artisan tinker`
+
+## Production Setup
+
+For production deployment, the application uses Docker with MySQL:
+
+```bash
+docker-compose up -d
+```
+
+This will start:
+- **Laravel App** (PHP 8.2)
+- **Nginx** web server
+- **MySQL 8.0** database
+
+## Development Notes
+
+- The application uses **Inertia.js** for SPA-like experience
+- **Vue.js 3** components are located in `resources/js/Components/`
+- **Tailwind CSS** is used for styling
+- **Content Management** is handled through the `cms_contents` table
+- **Assets** are compiled with Vite and copied to `storage/app/public/`
+
+## Troubleshooting
+
+### Database Connection Issues
+- Ensure SQLite database file exists: `touch database/database.sqlite`
+- Check database path in `.env` file is absolute
+- Clear config cache: `php artisan config:clear`
+
+### Missing Assets
+- Run `php artisan storage:link` to create symbolic link
+- Build assets with `npm run build`
+- Check Vite dev server is running for development
+
+### Missing Content
+- Run the CMS content seeder: `php artisan db:seed --class=CmsContentSeeder`
+- Check `cms_contents` table in database
