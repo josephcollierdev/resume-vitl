@@ -1,0 +1,82 @@
+# jay.developer — Cursor Agent Rules
+# Drop this file at the root of the Laravel/Inertia/Vue project.
+# All agent prompts in PROMPTS.md reference these constraints.
+
+## Stack
+- Backend:  Laravel 11, PHP 8.2, Inertia.js
+- Frontend: Vue 3 (Composition API + <script setup>), Tailwind CSS v3
+- Build:    Vite
+- Routing:  Ziggy (route() helper available in JS)
+- CMS:      Filament v3 admin panel at /admin
+
+## Design system — tokens (Tailwind extend or CSS vars)
+Use these exact values. Do NOT deviate for "close enough" Tailwind defaults.
+
+### Colors
+| Token          | Hex       | Usage                          |
+|----------------|-----------|--------------------------------|
+| bg             | #0f0f11   | Page background                |
+| bg-surface     | #16161a   | Card / panel surface           |
+| bg-raised      | #1c1c21   | Hover state, nav active        |
+| border         | #2a2a32   | Default border                 |
+| border-strong  | #38383f   | Emphasis border                |
+| text-primary   | #e8e4f0   | Body, headings                 |
+| text-secondary | #9994aa   | Muted / supporting text        |
+| text-tertiary  | #55505f   | Placeholders, labels           |
+| accent         | #7f77dd   | Primary accent (purple)        |
+| accent-deep    | #534ab7   | Accent border, deep variant    |
+| accent-dim     | #2a2640   | Accent fill (pill bg)          |
+| teal           | #1d9e75   | Security / status green        |
+| teal-dim       | #0d3326   | Teal fill bg                   |
+| teal-border    | #0f6e56   | Teal border                    |
+
+### Typography
+- Font: system-ui / 'Segoe UI' for UI; Georgia/serif for resume-page insets only
+- Base size: 14px / 1rem
+- Eyebrow labels: 11px, weight 600, tracking 0.12em, uppercase, color: accent
+- Body copy: 13px, line-height 1.75, color: text-secondary
+- Nav links: 13px, color: text-secondary → text-primary on hover
+- Skill group label: 11px, weight 600, tracking 0.03em, color: text-secondary
+
+### Spacing rhythm
+- Section inner padding: 40px 28px
+- Card padding: 18–24px
+- Gap between cards: 20px
+- Pill gap: 6px
+
+### Component shapes
+- Cards: border-radius 12px, border 1px border, bg-surface
+- Pills: border-radius 20px (full round), 4px 12px padding
+- Nav: height 60px, sticky top-0, border-bottom
+- Section dividers: border-bottom 1px border, between every section
+
+## Pill colour rules
+- Default pills:      bg accent-dim  | text accent     | border accent-deep
+- Security/cyber pills: bg teal-dim  | text teal       | border teal-border
+  (Apply teal variant to: "Security & Authorization", "Cybersecurity Certifications" groups)
+
+## Layout rules
+- About section:    CSS grid, 1fr + 180px sidebar. Sidebar = avatar card.
+- Skills section:   Single column, one card per skill group, pills wrap inside.
+- Contact section:  CSS grid 1fr 1fr. Left = email card. Right = logo card.
+- Resume section:   Centered column, max-width 440px per page, cream (#faf9f7) bg.
+
+## Nav behaviour
+- Sticky, z-index 50
+- Logo: "jay<accent-dot>developer" — the dot is accent colour, rest is text-primary
+- Links: about · resume · skills · contact · github
+- Active/hover: bg-raised background, text-primary colour, border-radius 6px
+
+## DO NOT
+- Use Tailwind purples (violet-*, purple-*) — use the exact hex tokens above
+- Add gradients, drop-shadows, glow effects, or blur
+- Use Inter, Roboto, or Arial
+- Add animations beyond CSS transition: all 0.15s on interactive elements
+- Nest scrollable containers
+- Use font-weight > 700 anywhere
+
+## File targets (existing project structure)
+- Page component:     resources/js/Pages/Home.vue
+- Data (skills etc):  resources/js/data/skills.js  (extract from props if needed)
+- Tailwind config:    tailwind.config.js            (add token extends)
+- CSS variables:      resources/css/app.css         (optional, if not using Tailwind extend)

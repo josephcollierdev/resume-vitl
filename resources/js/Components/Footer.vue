@@ -1,43 +1,7 @@
-<script setup>
-  import { onMounted } from 'vue';
-
-  const props = defineProps({
-    sectionHeaderContainerClass: {
-      type: String,
-      required: true
-    },
-    sectionHeaderClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentStylingClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentSpacerClass: {
-      type: String,
-      required: true
-    },
-    footerStylingClass: {
-      type: String,
-      required: true
-    }
-  });
-
-  onMounted(() => {
-      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
-      const sectionHeaderClass = props.sectionHeaderClass
-      const subContainerContentStylingClass = props.subContainerContentStylingClass
-      const subContainerContentSpacerClass = props.subContainerContentSpacerClass
-      const footerStylingClass = props.footerStylingClass
-  });
-</script>
-
 <template>
-  <div class="w-full z-50 bg-black-magic-500 lg:fixed lg:bottom-0">
-    <div :class="footerStylingClass" class="border-t border-space-shuttle-500 py-4 text-center">
-      <div>© {{ new Date().getFullYear() }} <div class="hidden">music</div> Joseph Collier</div>
-    </div>
-  </div>
+  <footer
+    class="border-t border-border px-7 py-5 text-center text-xs tracking-[0.04em] text-text-tertiary"
+  >
+    © {{ new Date().getFullYear() }} joseph collier · fullstack &amp; cybersecurity
+  </footer>
 </template>
-

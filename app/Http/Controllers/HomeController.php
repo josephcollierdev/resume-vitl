@@ -143,6 +143,7 @@ class HomeController extends Controller
             ],
             [
                 'skill' => 'security-authorizations',
+                'teal' => true,
                 'label' => 'Security & Authorization',
                 'items' => [
                     'OAuth',
@@ -228,6 +229,7 @@ class HomeController extends Controller
             ],
             [
                 'skill' => 'cyber-certs',
+                'teal' => true,
                 'label' => 'Cybersecurity Certifications',
                 'items' => [
                     'Play It Safe: Manage Security Risks',

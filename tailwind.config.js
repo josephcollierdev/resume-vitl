@@ -3,19 +3,14 @@ import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './resources/js/**/*.vue',
-    ],
-
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 // lato: ['Lato', 'sans-serif'],
                 montserrat: ['Montserrat', 'sans-serif'],
+                ui: ['Segoe UI', 'system-ui', 'sans-serif'],
+                resume: ['Georgia', 'serif'],
             },
             colors: {
                 'azure': {
@@ -54,14 +49,30 @@ export default {
                 },
                 'sorbus': {
                     500: '#EB5E28'
-                }
+                },
+                bg: '#0f0f11',
+                'bg-surface': '#16161a',
+                'bg-raised': '#1c1c21',
+                border: '#2a2a32',
+                'border-strong': '#38383f',
+                'text-primary': '#e8e4f0',
+                'text-secondary': '#9994aa',
+                'text-tertiary': '#55505f',
+                accent: '#7f77dd',
+                'accent-deep': '#534ab7',
+                'accent-dim': '#2a2640',
+                teal: '#1d9e75',
+                'teal-dim': '#0d3326',
+                'teal-border': '#0f6e56',
             }
         },
     },
 
     content: [
-        './resources/js/**/*.{vue,js}',
-        './resources/views/**/*.blade.php'
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/js/**/*.vue',
     ],
 
     plugins: [forms],
