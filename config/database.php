@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Str;
 
+/*
+| PHP 8.5 deprecates PDO::MYSQL_ATTR_SSL_CA in favor of Pdo\Mysql::ATTR_SSL_CA.
+| Use the new constant when available so config loading stays quiet on 8.5+.
+*/
+$pdoMysqlAttrSslCa = \defined('Pdo\Mysql::ATTR_SSL_CA')
+    ? \Pdo\Mysql::ATTR_SSL_CA
+    : \PDO::MYSQL_ATTR_SSL_CA;
+
 return [
 
     /*
@@ -55,7 +63,7 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+                $pdoMysqlAttrSslCa => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
 
@@ -75,7 +83,7 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+                $pdoMysqlAttrSslCa => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
 
