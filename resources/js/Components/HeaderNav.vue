@@ -17,6 +17,7 @@ export default {
         <a href="#" :class="navLinkClass">ABOUT ME</a>
         <a href="#section-resume" :class="navLinkClass">RESUME</a>
         <a href="#section-skills" :class="navLinkClass">SKILLS</a>
+        <a href="#section-skills" :class="navLinkClass">SERVICES</a>
         <a href="#section-contact" :class="navLinkClass">CONTACT</a>
         <a href="https://github.com/josephcollierdev" target="_blank" :class="navLinkClass" class="pb-4">GITHUB</a>
       </div>

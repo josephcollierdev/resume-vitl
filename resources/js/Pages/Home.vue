@@ -7,6 +7,7 @@ import Resume from '@/Components/Resume.vue';
 import Skills from '@/Components/Skills.vue';
 import Contact from '@/Components/Contact.vue';
 import Footer from '@/Components/Footer.vue';
+import Services from '@/Components/Services.vue';
 
 const props = defineProps({
   biographyText: {
@@ -47,11 +48,12 @@ let fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base le
 let sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
 let sectionHeaderContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
 let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 lg:p-16"
-let footerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
+// let footerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
 let subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
 let subContainerContentSpacerClass = 'h-4 md:h-8'
 let verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
 let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
+let headerNavLinkIconClass = 'text-floral-white-500'
 </script>
 
 <template>
@@ -72,10 +74,11 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
           :class="verticalAlignClass"
           class="w-1/5 h-12 text-base md:text-lg grow flex justify-evenly md:justify-around overflow-y-hidden text-center">
           <a href="#section-about" :class="headerNavLinkClass">about</a href="#">
+          <a href="#section-services" :class="headerNavLinkClass">services</a href="#">
           <a href="#section-resume" :class="headerNavLinkClass">resume</a href="#">
           <a href="#section-skills" :class="headerNavLinkClass">skills</a href="#">
           <a href="#section-contact" :class="headerNavLinkClass">contact</a href="#">
-          <a href="https://github.com/josephcollierdev" target="_blank" :class="headerNavLinkClass">github</a>
+          <a href="https://github.com/josephcollierdev" target="_blank" :class="headerNavLinkClass">github <font-awesome-icon :class="headerNavLinkIconClass" :icon="['fas', 'external-link']" /></a>
         </div>
       </div>
 
@@ -95,6 +98,15 @@ let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-
         :subContainerStylingClass="subContainerStylingClass"
         :subContainerContentStylingClass="subContainerContentStylingClass"
         :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+
+      <!-- SERVICES -->
+      <Services
+        :sectionHeaderContainerClass="sectionHeaderContainerClass"
+        :sectionHeaderClass="sectionHeaderClass"
+        :subContainerStylingClass="subContainerStylingClass"
+        :subContainerContentStylingClass="subContainerContentStylingClass"
+        :subContainerContentSpacerClass="subContainerContentSpacerClass"
+        :verticalAlignClass="verticalAlignClass"/>
 
       <!-- SKILLS -->
       <Skills
