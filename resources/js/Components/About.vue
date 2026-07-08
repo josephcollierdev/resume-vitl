@@ -21,32 +21,35 @@ defineProps({
 
     <!-- Two-column grid -->
     <div
-      class="grid items-start gap-5 grid-cols-1 sm:grid-cols-[1fr_180px]"
+      class="grid items-start gap-5 grid-cols-1 sm:grid-cols-[1fr_220px]"
     >
       <!-- Bio card -->
       <div
-        class="rounded-xl border border-border bg-bg-surface px-6 py-[22px] text-[13px] leading-[1.75] text-text-secondary"
+        class="rounded-xl border border-border bg-bg-surface px-6 py-[22px] font-resume text-[15px] leading-[1.7] text-text-secondary"
         v-html="biographyText"
       />
 
-      <!-- Avatar card -->
+      <!-- Facts card (Hero already carries the name/avatar, so this stays quick facts only) -->
       <div
-        class="flex flex-col items-center justify-center gap-3 rounded-xl border border-border bg-bg-surface px-4 py-6"
+        class="flex flex-col gap-3.5 rounded-xl border border-border bg-bg-surface px-4 py-5 text-[12px]"
       >
-        <!-- Avatar circle -->
-        <div
-          class="flex h-[72px] w-[72px] items-center justify-center rounded-full border-2 border-accent-deep bg-accent-dim text-2xl font-bold text-accent"
-        >
-          J
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Location
+          </div>
+          <div class="text-text-primary">Brooklyn, NY</div>
         </div>
-        <!-- Name -->
-        <div class="text-center text-[13px] font-semibold text-text-primary">
-          Joseph Collier
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Focus
+          </div>
+          <div class="text-text-primary">Fullstack &amp; Cybersecurity</div>
         </div>
-        <!-- Location -->
-        <div class="flex items-center gap-2 text-[11px] text-text-tertiary">
-          <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
-          Brooklyn, NY
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Currently
+          </div>
+          <div class="text-text-primary">Studying network security</div>
         </div>
       </div>
     </div>
