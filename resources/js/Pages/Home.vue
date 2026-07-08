@@ -55,7 +55,8 @@ onMounted(() => {
         >
           <span class="sm:hidden">J.C.</span>
           <span class="hidden sm:inline"
-            >joseph<span class="text-accent">.</span>collier</span>
+            >joseph<span class="text-accent">.</span>collier</span
+          >
         </span>
 
         <!-- Nav links -->

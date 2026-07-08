@@ -41,7 +41,7 @@ defineProps({
         </div>
         <!-- Name -->
         <div class="text-center text-[13px] font-semibold text-text-primary">
-          joseph collier
+          Joseph Collier
         </div>
         <!-- Location -->
         <div class="flex items-center gap-2 text-[11px] text-text-tertiary">

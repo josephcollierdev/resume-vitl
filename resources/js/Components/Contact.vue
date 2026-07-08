@@ -42,7 +42,7 @@
         class="flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-bg-surface p-6"
       >
         <div class="text-xl font-bold text-text-primary">
-          joseph<span class="text-accent">.</span>dev
+          josephcollier<span class="text-accent">.</span>dev
         </div>
         <div class="text-[11px] tracking-[0.08em] text-text-tertiary">
           Brooklyn · NYC
