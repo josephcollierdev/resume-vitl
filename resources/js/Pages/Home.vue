@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import Nav from '@/Components/Nav.vue';
 import Hero from '@/Components/Hero.vue';
 import About from '@/Components/About.vue';
@@ -26,7 +26,18 @@ defineProps({
 
 const activeSection = ref('resume');
 
-onMounted(() => {
+onMounted(async () => {
+  // The browser tries to jump to the URL hash before Vue has mounted these sections, so a link
+  // like /#resume (e.g. from the Projects page's nav) silently fails to scroll. Do it ourselves
+  // once mounted, waiting a frame for layout (images, fonts) to settle first.
+  if (window.location.hash) {
+    await nextTick();
+    requestAnimationFrame(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) target.scrollIntoView({ block: 'start' });
+    });
+  }
+
   const sections = ['resume', 'skills', 'about', 'contact'];
   const observer = new IntersectionObserver(
     (entries) => {
