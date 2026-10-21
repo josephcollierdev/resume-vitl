@@ -1,62 +1,53 @@
-<script setup>
-  import { onMounted } from 'vue';
-
-  const props = defineProps({
-    sectionHeaderContainerClass: {
-      type: String,
-      required: true
-    },
-    sectionHeaderClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentStylingClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentSpacerClass: {
-      type: String,
-      required: true
-    },
-    subContainerStylingClass: {
-      type: String,
-      required: true
-    },
-    verticalAlignClass: {
-      type: String,
-      required: true
-    }
-  });
-
-  onMounted(() => {
-      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
-      const sectionHeaderClass = props.sectionHeaderClass
-      const subContainerContentStylingClass = props.subContainerContentStylingClass
-      const subContainerContentSpacerClass = props.subContainerContentSpacerClass
-      const subContainerStylingClass = props.subContainerStylingClass
-      const verticalAlignClass = props.verticalAlignClass
-  });
-</script>
-
 <template>
-  <div class="min-h-[86lvh]">
-    <div id="section-contact" :class="sectionHeaderContainerClass">
-      <div :class="sectionHeaderClass">CONTACT</div>
+  <section
+    id="contact"
+    class="min-h-[280px] scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
+  >
+    <!-- Eyebrow -->
+    <h2
+      class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
+    >
+      contact
+    </h2>
+
+    <!-- Status bar -->
+    <div
+      class="mb-5 flex items-center gap-2 rounded-lg border border-teal-border bg-teal-dim px-4 py-2.5"
+    >
+      <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+      <span class="text-xs font-medium text-teal">
+        Available for projects &amp; remote work
+      </span>
     </div>
 
-    <div :class="subContainerStylingClass" class="w-full px-[3.95rem] m-auto border-b-0">
-      <div :class="subContainerContentStylingClass">
-        <div class="lg:mt-16">Feel free to send any questions or inquiries to me here, via email:<br />
-          <div class="hidden lg:block"><br /></div>
+    <!-- Two-column grid -->
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <!-- Email card -->
+      <div class="rounded-xl border border-border bg-bg-surface p-6">
+        <div
+          class="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-text-tertiary"
+        >
+          Email
         </div>
-        <p><a class="md:hover:text-lg hover:tracking-widest transition-all duration-500 ease-in-out" href="mailto:josephcollier.contact@gmail.com">josephcollier.contact@gmail.com</a></p>
-        <div class="flex p-0 lg:p-16 m-auto w-full justify-center">
-          <div class="flex w-32 h-32 lg:w-64 lg:h-64 border mt-4" :class="verticalAlignClass">
-            <div class="text-base lg:text-4xl" :class="verticalAlignClass">JOSEPH COLLIER</div>
-          </div>
+        <a
+          href="mailto:josephcollier.contact@gmail.com"
+          class="border-b border-accent-deep pb-0.5 text-[13px] tracking-[0.02em] text-accent no-underline transition-colors duration-150 hover:text-text-primary"
+        >
+          josephcollier.contact@gmail.com
+        </a>
+      </div>
+
+      <!-- Logo card -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-bg-surface p-6"
+      >
+        <div class="text-xl font-bold text-text-primary">
+          josephcollier<span class="text-accent">.</span>dev
+        </div>
+        <div class="text-[11px] tracking-[0.08em] text-text-tertiary">
+          Brooklyn · NYC
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
-

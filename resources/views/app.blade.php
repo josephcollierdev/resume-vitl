@@ -44,7 +44,7 @@
         <meta name="twitter:description" content="Professional website for a Brooklyn / New York City based web developer / software engineer / cybersecurity analyst named Joseph Collier.">
         <meta name="twitter:image" content="http://josephcollier.dev//build/storage/app/public/images/joseph-collier-logo_256_256.webp">
     </head>
-    <body class="font-sans antialiased bg-black-magic-500">
+    <body class="font-ui antialiased bg-bg">
         @inertia
     </body>
 </html>

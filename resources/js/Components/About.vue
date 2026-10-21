@@ -1,62 +1,57 @@
 <script setup>
-  import { onMounted } from 'vue';
-
-  const props = defineProps({
-    biographyText: {
-      type: String,
-      required: true
-    },
-    sectionHeaderContainerClass: {
-      type: String,
-      required: true
-    },
-    sectionHeaderClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentStylingClass: {
-      type: String,
-      required: true
-    },
-    subContainerContentSpacerClass: {
-      type: String,
-      required: true
-    },
-    subContainerStylingClass: {
-      type: String,
-      required: true
-    }
-  });
-
-  onMounted(() => {
-      const sectionHeaderContainerClass = props.sectionHeaderContainerClass
-      const sectionHeaderClass = props.sectionHeaderClass
-      const subContainerContentStylingClass = props.subContainerContentStylingClass
-      const subContainerContentSpacerClass = props.subContainerContentSpacerClass
-      const subContainerStylingClass = props.subContainerStylingClass
-  });
+defineProps({
+  biographyText: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <div>
-    <div id="section-about" :class="sectionHeaderContainerClass">
-      <div :class="sectionHeaderClass">ABOUT ME</div>
-    </div>
+  <section
+    id="about"
+    class="border-b border-border scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
+  >
+    <!-- Eyebrow -->
+    <h2
+      class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
+    >
+      about me
+    </h2>
 
-    <div :class="subContainerStylingClass" class="w-full min-h-64 m-auto">
+    <!-- Two-column grid -->
+    <div
+      class="grid items-start gap-5 grid-cols-1 sm:grid-cols-[1fr_220px]"
+    >
+      <!-- Bio card -->
       <div
-        :class="subContainerContentStylingClass"
-        class="text-left h-full font-inder"
-        v-html="biographyText"/>
-      <div :class="subContainerContentSpacerClass"></div>
+        class="rounded-xl border border-border bg-bg-surface px-6 py-[22px] font-resume text-[15px] leading-[1.7] text-text-secondary"
+        v-html="biographyText"
+      />
+
+      <!-- Facts card (Hero already carries the name/avatar, so this stays quick facts only) -->
       <div
-        alt="Background image is a photo of Joseph Collier."
-        :class="subContainerContentStylingClass"
-        class="h-64 sm:h-96 flex text-center align-middle justify-center justify-items self-center items-center bg-[url('/build/storage/app/public/images/me_01.webp')]
-        bg-cover bg-no-repeat bg-center opacity-50 blur-[2px] sepia-[.25] hover:blur-none saturate-50 hover:saturate-100 hue-rotate-180 hover:hue-rotate-30 transition-all duration-700
-        ">
-        <div class="h-auto opacity-5">JOSEPH COLLIER</div>
+        class="flex flex-col gap-3.5 rounded-xl border border-border bg-bg-surface px-4 py-5 text-[12px]"
+      >
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Location
+          </div>
+          <div class="text-text-primary">Brooklyn, NY</div>
+        </div>
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Focus
+          </div>
+          <div class="text-text-primary">Fullstack &amp; Cybersecurity</div>
+        </div>
+        <div>
+          <div class="mb-1 text-[10px] uppercase tracking-[0.08em] text-text-tertiary">
+            Currently
+          </div>
+          <div class="text-text-primary">Studying network security</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

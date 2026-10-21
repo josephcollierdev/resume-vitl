@@ -1,126 +1,90 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import { onMounted } from 'vue';
-import HeaderNav from '@/Components/HeaderNav.vue';
+import { ref, onMounted, nextTick } from 'vue';
+import Nav from '@/Components/Nav.vue';
+import Hero from '@/Components/Hero.vue';
 import About from '@/Components/About.vue';
 import Resume from '@/Components/Resume.vue';
 import Skills from '@/Components/Skills.vue';
 import Contact from '@/Components/Contact.vue';
 import Footer from '@/Components/Footer.vue';
 
-const props = defineProps({
+defineProps({
   biographyText: {
-    type: String,
-    required: true
-  },
-  skillsData: {
-    type: Object,
-    required: true
-  },
-  sectionHeaderContainerClass: {
     type: String,
     required: true,
   },
-  sectionHeaderClass: {
-    type: String,
-    required: true
+  skillsData: {
+    type: Array,
+    required: true,
   },
-  subContainerContentStylingClass: {
+  resumeUrl: {
     type: String,
-    required: true
+    default: null,
   },
-  subContainerContentSpacerClass: {
-    type: String,
-    required: false
-  },
-  subContainerStylingClass: {
-    type: String,
-    required: false
-  },
-  footerStylingClass: {
-    type: String,
-    required: false
-  }
 });
 
-let fontMainClass = 'text-floral-white-500 font-semibold text-sm md:text-base leading-5'
-let sectionHeaderClass = 'w-full text-center text-xl tracking-wider'
-let sectionHeaderContainerClass = 'w-full h-16 m-auto flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 scroll-my-16'
-let subContainerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4 lg:p-16"
-let footerStylingClass = "flex flex-col text-center align-middle justify-center justify-items self-center items-center border-b border-space-shuttle-500 p-4"
-let subContainerContentStylingClass = 'w-full p-4 overflow-scroll border border-space-shuttle-500 rounded-md'
-let subContainerContentSpacerClass = 'h-4 md:h-8'
-let verticalAlignClass = 'text-center align-middle justify-center justify-items self-center items-center'
-let headerNavLinkClass = 'cursor-pointer md:hover:tracking-widest md:hover:text-3xl transition-all duration-500 ease-in-out scroll-my-96'
+const activeSection = ref('resume');
+
+onMounted(async () => {
+  // The browser tries to jump to the URL hash before Vue has mounted these sections, so a link
+  // like /#resume (e.g. from the Projects page's nav) silently fails to scroll. Do it ourselves
+  // once mounted, waiting a frame for layout (images, fonts) to settle first.
+  if (window.location.hash) {
+    await nextTick();
+    requestAnimationFrame(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) target.scrollIntoView({ block: 'start' });
+    });
+  }
+
+  const sections = ['resume', 'skills', 'about', 'contact'];
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) activeSection.value = entry.target.id;
+      });
+    },
+    { threshold: 0.3 }
+  );
+  sections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+});
 </script>
 
 <template>
-  <div class="max-w-fit min-h-screen bg-black-magic-500" :class="fontMainClass">
+  <Head title="Full-Stack Developer &amp; Software Engineer" />
+
+  <div class="max-w-fit min-h-screen bg-bg">
     <div id="home-container" class="w-screen">
+      <a
+        href="#main"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:z-[60] focus:m-2 focus:rounded focus:bg-bg-raised focus:px-3 focus:py-2 focus:text-text-primary"
+      >
+        Skip to content
+      </a>
 
-      <!-- HEADER -->
-      <div class="h-16 flex align-middle justify-items self-center items-center border-b border-t border-space-shuttle-500 bg-black-magic-500 z-50 sticky top-0">
+      <Nav :active="activeSection" />
 
-        <!-- EMBLEM -->
-        <div class="text-lg md:text-xl w-16 sm:w-64 h-16 flex align-middle justify-items self-center items-center text-center border-r border-space-shuttle-500 ">
-          <div class="w-full sm:hidden">J.C.</div>
-          <div class="w-full hidden sm:block">JOSEPH COLLIER</div>
-        </div>
+      <main id="main" tabindex="-1">
+        <Hero :resume-url="resumeUrl ?? null" />
 
-        <!-- NAV -->
-        <div
-          :class="verticalAlignClass"
-          class="w-1/5 h-12 text-base md:text-lg grow flex justify-evenly md:justify-around overflow-y-hidden text-center">
-          <a href="#section-about" :class="headerNavLinkClass">about</a href="#">
-          <a href="#section-resume" :class="headerNavLinkClass">resume</a href="#">
-          <a href="#section-skills" :class="headerNavLinkClass">skills</a href="#">
-          <a href="#section-contact" :class="headerNavLinkClass">contact</a href="#">
-          <a href="https://github.com/josephcollierdev" target="_blank" :class="headerNavLinkClass">github</a>
-        </div>
-      </div>
+        <!-- Resume -->
+        <Resume :resume-url="resumeUrl ?? null" />
 
-      <!-- ABOUT ME -->
-      <About
-        :biographyText="biographyText"
-        :sectionHeaderContainerClass="sectionHeaderContainerClass"
-        :sectionHeaderClass="sectionHeaderClass"
-        :subContainerStylingClass="subContainerStylingClass"
-        :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+        <!-- SKILLS -->
+        <Skills :skills-data="skillsData" />
 
-      <!-- Resume -->
-      <Resume
-        :sectionHeaderContainerClass="sectionHeaderContainerClass"
-        :sectionHeaderClass="sectionHeaderClass"
-        :subContainerStylingClass="subContainerStylingClass"
-        :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+        <!-- ABOUT ME -->
+        <About :biographyText="biographyText" />
 
-      <!-- SKILLS -->
-      <Skills
-        :skillsData="skillsData"
-        :sectionHeaderContainerClass="sectionHeaderContainerClass"
-        :sectionHeaderClass="sectionHeaderClass"
-        :subContainerStylingClass="subContainerStylingClass"
-        :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"
-        :verticalAlignClass="verticalAlignClass"/>
+        <!-- CONTACT -->
+        <Contact />
+      </main>
 
-      <!-- CONTACT -->
-      <Contact
-        :sectionHeaderContainerClass="sectionHeaderContainerClass"
-        :sectionHeaderClass="sectionHeaderClass"
-        :subContainerStylingClass="subContainerStylingClass"
-        :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"
-        :verticalAlignClass="verticalAlignClass"/>
-
-      <Footer
-        :sectionHeaderContainerClass="sectionHeaderContainerClass"
-        :sectionHeaderClass="sectionHeaderClass"
-        :subContainerStylingClass="subContainerStylingClass"
-        :subContainerContentStylingClass="subContainerContentStylingClass"
-        :subContainerContentSpacerClass="subContainerContentSpacerClass"/>
+      <Footer />
     </div>
   </div>
 </template>
