@@ -29,7 +29,7 @@ defineProps({
     <div class="mt-7 flex flex-wrap gap-3">
       <a
         href="/projects"
-        class="rounded-lg bg-accent-deep px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-150 hover:bg-accent"
+        class="rounded-lg bg-accent-deep px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-150 hover:bg-accent-hover"
       >
         View Portfolio
       </a>

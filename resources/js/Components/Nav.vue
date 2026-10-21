@@ -34,17 +34,6 @@ const sectionLinks = ['resume', 'skills', 'about'];
         {{ label }}
       </a>
       <a
-        href="/projects"
-        class="rounded-md px-3.5 py-1.5 text-[13px] transition-all duration-150"
-        :class="
-          active === 'projects'
-            ? 'bg-bg-raised text-text-primary'
-            : 'text-text-secondary hover:bg-bg-raised hover:text-text-primary'
-        "
-      >
-        projects
-      </a>
-      <a
         :href="`${basePath}#contact`"
         class="rounded-md px-3.5 py-1.5 text-[13px] transition-all duration-150"
         :class="

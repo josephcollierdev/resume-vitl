@@ -14,11 +14,11 @@ defineProps({
     class="border-b border-border scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
   >
     <!-- Eyebrow -->
-    <div
+    <h2
       class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
     >
       skills
-    </div>
+    </h2>
 
     <!-- Skill group cards -->
     <div
@@ -27,11 +27,11 @@ defineProps({
       class="mb-3.5 rounded-xl border border-border bg-bg-surface px-5 py-[18px]"
     >
       <!-- Group label -->
-      <div
+      <h3
         class="mb-3 text-[11px] font-semibold tracking-[0.03em] text-text-secondary"
       >
         {{ group.label }}
-      </div>
+      </h3>
 
       <!-- Pills -->
       <div class="flex flex-wrap gap-1.5">

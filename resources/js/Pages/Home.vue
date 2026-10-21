@@ -55,23 +55,34 @@ onMounted(async () => {
 </script>
 
 <template>
+  <Head title="Full-Stack Developer &amp; Software Engineer" />
+
   <div class="max-w-fit min-h-screen bg-bg">
     <div id="home-container" class="w-screen">
+      <a
+        href="#main"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-0 focus:top-0 focus:z-[60] focus:m-2 focus:rounded focus:bg-bg-raised focus:px-3 focus:py-2 focus:text-text-primary"
+      >
+        Skip to content
+      </a>
+
       <Nav :active="activeSection" />
 
-      <Hero :resume-url="resumeUrl ?? null" />
+      <main id="main" tabindex="-1">
+        <Hero :resume-url="resumeUrl ?? null" />
 
-      <!-- Resume -->
-      <Resume :resume-url="resumeUrl ?? null" />
+        <!-- Resume -->
+        <Resume :resume-url="resumeUrl ?? null" />
 
-      <!-- SKILLS -->
-      <Skills :skills-data="skillsData" />
+        <!-- SKILLS -->
+        <Skills :skills-data="skillsData" />
 
-      <!-- ABOUT ME -->
-      <About :biographyText="biographyText" />
+        <!-- ABOUT ME -->
+        <About :biographyText="biographyText" />
 
-      <!-- CONTACT -->
-      <Contact />
+        <!-- CONTACT -->
+        <Contact />
+      </main>
 
       <Footer />
     </div>

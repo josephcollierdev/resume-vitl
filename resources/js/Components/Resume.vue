@@ -34,29 +34,31 @@ const onHide = () => {
     class="border-b border-border scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
   >
     <!-- Eyebrow -->
-    <div
+    <h2
       class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
     >
       resume
-    </div>
+    </h2>
 
     <!-- Outer container -->
     <div
       class="flex flex-col items-center gap-5 rounded-xl border border-border bg-bg-surface p-7"
     >
       <!-- Paper frames -->
-      <div
+      <button
         v-for="(src, i) in imgs"
         :key="i"
+        type="button"
+        :aria-label="`Enlarge résumé page ${i + 1}`"
         class="w-full cursor-pointer rounded-lg bg-[#faf9f7] p-2 sm:max-w-[440px]"
         @click="showImg(i)"
       >
         <img
           :src="src"
-          alt="Resume page"
+          :alt="`Résumé — page ${i + 1}`"
           class="block h-auto w-full rounded"
         />
-      </div>
+      </button>
 
       <vue-easy-lightbox
         :visible="visibleRef"

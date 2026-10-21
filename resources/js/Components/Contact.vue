@@ -4,11 +4,11 @@
     class="min-h-[280px] scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
   >
     <!-- Eyebrow -->
-    <div
+    <h2
       class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
     >
       contact
-    </div>
+    </h2>
 
     <!-- Status bar -->
     <div

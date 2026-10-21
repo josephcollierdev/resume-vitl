@@ -13,11 +13,11 @@ defineProps({
     class="border-b border-border scroll-mt-16 px-4 py-6 sm:px-7 sm:py-10"
   >
     <!-- Eyebrow -->
-    <div
+    <h2
       class="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent"
     >
       about me
-    </div>
+    </h2>
 
     <!-- Two-column grid -->
     <div
