@@ -28,12 +28,6 @@ defineProps({
 
     <div class="mt-7 flex flex-wrap gap-3">
       <a
-        href="/projects"
-        class="rounded-lg bg-accent-deep px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-150 hover:bg-accent-hover"
-      >
-        View Portfolio
-      </a>
-      <a
         :href="resumeUrl ?? '#resume'"
         :download="resumeUrl ? '' : null"
         class="rounded-lg border border-border-strong px-5 py-2.5 text-[13px] font-semibold text-text-primary transition-colors duration-150 hover:bg-bg-raised"
